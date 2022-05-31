@@ -26,3 +26,19 @@ RUN npm install
 EXPOSE 4000
 
 CMD [ "node", "app.js" ]
+
+
+# //* DOCKER BUILD :  `docker build -t theimagename .` to build the image.
+# theimagename is the name of the image we want to build.
+# the . is the current directory.
+# so we can use `docker build -t theimagename .` to build the image.
+
+# //* DOCKER IMAGES : `docker images` to list all the images we have
+
+# //* DOCKER RUN : `docker run --name tamal-docker-app-2 myfirstdockerapp` to run the image and a container named as tamal-docker-app-2.
+
+# //* DOCKER PROCESSES : `docker ps` to list all the processes running.
+
+# //* DOCKER STOP CONTAINER : `docker stop tamal-docker-app-2` to stop the container.
+
+# //* DOCKER START CONTAINER : `docker start tamal-docker-app-2` to start the container.
