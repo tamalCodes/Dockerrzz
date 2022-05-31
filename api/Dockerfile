@@ -8,6 +8,12 @@
 # //* And then use the new image to run our app in a new container.
 
 
+# //^ DOCKER REMOVE IMAGES : we can remove the images we don't need anymore.
+# //^ to remove images we just say : docker image rm imagename -f  <-- this will remove the image and the container.
+
+# //& DOCKER REMOVE CONTAINER : we can remove the container we don't need anymore.
+# //& to remove container we just say : docker container rm container_name -f  <-- this will remove the container.
+
 FROM node:17-alpine
 
 WORKDIR /app
