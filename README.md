@@ -13,3 +13,7 @@ It's how i basically am learning and infact sharing everything about Docker 🚀
 ⭐ Also i ran `Docker build -t myfirstdockerapp .` to build a docker image.
 
 ⭐ Next up we are gonna see how we can actually use the image inside of a container !!
+
+# Up and running 🎆
+
+![lmao](./dock1.png)

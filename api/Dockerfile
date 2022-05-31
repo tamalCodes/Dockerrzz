@@ -25,4 +25,4 @@ RUN npm install
 
 EXPOSE 4000
 
-CMD [ "nodemon", "app.js" ]
+CMD [ "node", "app.js" ]
