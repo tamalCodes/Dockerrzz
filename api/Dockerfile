@@ -1,44 +1,25 @@
-# This is basically a set of instructions for building a docker image.
-# The instructions are based on the instructions for building a docker image
-# from the official documentation.
 
-# here firstly we are using node version 17-alpine as the base image.
-# it means node ver 17 and alpine distrubution of linux.
+# //* LAYER CACHING : We have the ability to cache an image layer, so that the next time we build it, we can skip the steps
+# //* SO, we are gonna be adding a command to copy the package.json file first and do npm i so that we have node modules ready in cache.
 
-# for copy we are using . /app because we are copying the files from the current directory ,to a new folder in images called 
-# "app" if all my code was in some other  directory then we would have to specify the path of the directory.
-# COPY ./src /app   <-- LIKE THIS 
+# //* Next time we can change stuffs in App.js and we wont have to run npm i everytime, because that's weird. 
 
-# amra ekhane WORKDIR e giye app bole akta folder define kore diyechi so that erpor jaa jaa hobe, shob jaano /app ei hoy
+# //* So once we made changes to APP.JS we can simply make a new image by docker build
+# //* And then use the new image to run our app in a new container.
 
-# we run npm i at build time to install all the dependencies.
-
-# we then use CMD to specify the command to run when the image is running
 
 FROM node:17-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY package.json .
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 4000
 
 CMD [ "node", "app.js" ]
 
 
-# //* DOCKER BUILD :  `docker build -t theimagename .` to build the image.
-# theimagename is the name of the image we want to build.
-# the . is the current directory.
-# so we can use `docker build -t theimagename .` to build the image.
-
-# //* DOCKER IMAGES : `docker images` to list all the images we have
-
-# //* DOCKER RUN : `docker run --name tamal-docker-app-2 myfirstdockerapp` to run the image and a container named as tamal-docker-app-2.
-
-# //* DOCKER PROCESSES : `docker ps` to list all the processes running.
-
-# //* DOCKER STOP CONTAINER : `docker stop tamal-docker-app-2` to stop the container.
-
-# //* DOCKER START CONTAINER : `docker start tamal-docker-app-2` to start the container.
