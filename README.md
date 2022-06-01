@@ -4,16 +4,12 @@ It's how i basically am learning and infact sharing everything about Docker 🚀
 
 # Lesson 2 : Layer caching, Managing images, containers 🎃
 
-⭐ Here i learnt what a Dockerfile is, and all the basics of an Image, Container
+⭐ LAYER CACHING : We have the ability to cache an image layer, so that the next time we build it, we can skip the steps
 
-⭐ We are using a NODE Api, to understand how a Dockerfile works.
+⭐ So we need to copy the `package.json` file first and then `npm i` it so that we have the node modules already there in cache.
 
-⭐ Also we are using `Node Ver 17-alpine`
+⭐ Then we can `docker build` a new image and the nodemodules and stuffs will be loaded in faster.
 
-⭐ Also i ran `Docker build -t myfirstdockerapp .` to build a docker image.
+⭐ Also there are commands to remove a image, container, everything.
 
-⭐ Next up we are gonna see how we can actually use the image inside of a container !!
-
-# Up and running 🎆
-
-![lmao](./dock1.png)
+![dockeralt](./docker2.png)
