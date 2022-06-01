@@ -35,7 +35,7 @@ CMD [ "node", "app.js" ]
 
 # //* DOCKER IMAGES : `docker images` to list all the images we have
 
-# //* DOCKER RUN : `docker run --name tamal-docker-app-2 myfirstdockerapp` to run the image and a container named as tamal-docker-app-2.
+# //* DOCKER RUN : `docker run --name cont-1 -p 4000:4000 img-1` to run the image and a container named as tamal-docker-app-2.
 
 # //* DOCKER PROCESSES : `docker ps` to list all the processes running.
 
