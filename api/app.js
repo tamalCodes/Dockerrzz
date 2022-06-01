@@ -12,15 +12,15 @@ app.get("/", (req, res) => {
   res.json([
     {
       id: "1",
-      title: "Book Review: The Bear & The Fish",
+      title: "Book Review: The Bear & The Fish  - Updated1",
     },
     {
       id: "2",
-      title: "Game Review: Pokemon Brillian Diamond",
+      title: "Game Review: Pokemon Brillian Diamond  - Updated",
     },
     {
       id: "3",
-      title: "Show Review: Alice in Borderland",
+      title: "Show Review: Alice in Borderland  - Updated",
     },
   ]);
 });

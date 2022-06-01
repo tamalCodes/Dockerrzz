@@ -1,24 +1,15 @@
+#//* Volumes are used to mount directories or files from the host into the container so that whenever there are changes in the host, the changes are reflected in the container too.
 
-# //* LAYER CACHING : We have the ability to cache an image layer, so that the next time we build it, we can skip the steps
-# //* SO, we are gonna be adding a command to copy the package.json file first and do npm i so that we have node modules ready in cache.
+#//* volumes are specified in the Dockerfile using the VOLUME command.
 
-# //* Next time we can change stuffs in App.js and we wont have to run npm i everytime, because that's weird. 
+#//* But let us remember that images doesnot changes in volume !! So, if you want to change the volume, you have to create a new image.
 
-# //* So once we made changes to APP.JS we can simply make a new image by docker build
-# //* And then use the new image to run our app in a new container.
-
-
-# //^ DOCKER REMOVE IMAGES : we can remove the images we don't need anymore.
-# //^ to remove images we just say : docker image rm imagename -f  <-- this will remove the image and the container.
-
-# //& DOCKER REMOVE CONTAINER : we can remove the container we don't need anymore.
-# //& to remove container we just say : docker container rm container_name -f  <-- this will remove the container.
-
-
-# //! DOCKER REMOVE ALL : we can remove all the images and containers we don't need anymore.
-# //! to remove all we just say : docker system prune -a  <-- this will remove all the images and the container.
+#//* So `docker run --name cont-1 -p 4000:4000 -v D:\Github-files\Dockerrzz\api:/app -v /app/node_modules  img-1 ` gives us a new container named CONT-1 which 
+#//* uses image IMG-1 and also uses VOLUME from D:\Github-files\Dockerrzz\api to the container along with node_modules.
 
 FROM node:17-alpine
+
+RUN npm install -g nodemon
 
 WORKDIR /app
 
@@ -30,6 +21,6 @@ COPY . .
 
 EXPOSE 4000
 
-CMD [ "node", "app.js" ]
+CMD [ "npm", "run", "dev" ]
 
 
