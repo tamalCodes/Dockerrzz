@@ -14,6 +14,10 @@
 # //& DOCKER REMOVE CONTAINER : we can remove the container we don't need anymore.
 # //& to remove container we just say : docker container rm container_name -f  <-- this will remove the container.
 
+
+# //! DOCKER REMOVE ALL : we can remove all the images and containers we don't need anymore.
+# //! to remove all we just say : docker system prune -a  <-- this will remove all the images and the container.
+
 FROM node:17-alpine
 
 WORKDIR /app
