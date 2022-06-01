@@ -2,7 +2,7 @@
 
 It's how i basically am learning and infact sharing everything about Docker 🚀
 
-# Lesson 1 : What is Dockerfile, basics 🎃
+# Lesson 2 : Layer caching, Managing images, containers 🎃
 
 ⭐ Here i learnt what a Dockerfile is, and all the basics of an Image, Container
 
