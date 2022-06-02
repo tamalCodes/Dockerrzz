@@ -1,2 +1,5 @@
-# Dockerrzz
- It's how i basically am learning and infact sharing everything about Docker 🚀
+# A basic dockerized app
+
+`index.html` contains the Frontend
+
+`server.js` as the backend.
